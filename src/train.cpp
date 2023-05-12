@@ -25,7 +25,7 @@ int Train::getLength() {
   Cage* cage = first;
   cage->light = true;
   int count = 1;
-  while(cage) {
+  while (cage) {
     cage = cage->next;
     if (cage->light == false) {
       count++;
@@ -33,15 +33,15 @@ int Train::getLength() {
     }
     if (cage->light == true) {
       cage->light = false;
-      CountOp++;
+      countOp++;
       for (int i = count; i > 0; i--) {
         cage = cage->prev;
         countOp++;
       }
       if (cage->light == false) {
-        return k;
+        return count;
       } else {
-        k = 1;
+        count = 1;
       }
     }
   }
